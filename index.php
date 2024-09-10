@@ -71,7 +71,15 @@
                             $secondStmnt->bind_param('sssssss', $model, $serial, $item_description, $copies, $totalprice, $unitprice, $colorType);
 
                             for($i = 0; $i < count($_POST['description']); $i++) {
+                                $model = $_POST["model"][$i];
+                                $serial = $_POST["serial"][$i];
+                                $item_description = $_POST["item_description"][$i];
+                                $copies = $_POST["copies"][$i];
+                                $totalprice = $_POST["totalprice"][$i];
+                                $unitprice = $_POST["unitprice"][$i];
+                                $colorType = $_POST["colortype"][$i];
 
+                                $secondStmnt->execute();
                             }
                         }
                     }
